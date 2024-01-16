@@ -107,24 +107,12 @@ select {
 
     --clr-Facebook: hsl(208, 92%, 53%);
     --clr-Twitter: hsl(203, 89%, 53%);
-    --clr-Instagram: linear-gradient(to right, hsl(37, 97%, 70%) 0%, hsl(329, 70%, 58%) 100%);
+    --clr-Instagram: linear-gradient( to right, hsl(37, 97%, 70%) 0%, hsl(329, 70%, 58%) 100%);
     --clr-YouTube: hsl(348, 97%, 39%);
 
 }
 
-.youtube{
-  border-top-color: var(--clr-YouTube);
-  background-color: red;
-}
-.twitter{
-  border-top-color: var(--clr-Twitter);
-}
-.instagram{
-  border-top-color: var(--clr-Instagram);
-}
-.facebook{
-  border-top-color: var(--clr-Facebook);
-}
+
 
 .content-grid{
   --padding : 1rem;
@@ -145,15 +133,26 @@ select {
 }
 
 
+
+
 .followers>h5{
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 2px;
   text-wrap: wrap;
+  line-height: 1.2;
+  color: var(--clr-neutral-500);
 }
 .followers>h5>span{
-  font-size: 2rem;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--clr-neutral-900);
+
 }
 
 
 .heading1{
+
   padding-block: 2rem;
   display: flex;
   align-items: center;
@@ -178,10 +177,12 @@ container{
 }
 
 container>.card{
-  padding-block: 1rem;
+  padding: 2rem;
   text-align: center;
   border-radius: 0.25rem;
   background-color: var(--clr-neutral-300);
+
+  transition: background-color 0.3s ease-in-out;
   
   /* border-top: 4px solid var(--clr-Facebook); */
   display: grid;
@@ -189,13 +190,19 @@ container>.card{
 }
 
 container>.card:hover{
-  background-color: var(--clr-neutral-500);
+  background-color: hsla(228, 12%, 44% , 0.4);
 }
 
 .platform{
   display: flex;
   gap: 0.5rem;
   justify-content: center;
+  align-items: center;
+}
+
+.platform>h4{
+  font-weight: 400;
+  color: var(--clr-neutral-500);
 }
 
 .Layout2>container>.card{
@@ -203,16 +210,35 @@ container>.card:hover{
 }
 
 .upper,.bottom{
-  padding: 1rem;
-
+  gap: 1rem;
+  
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+.bottom{
+   align-items: flex-end;
+}
+
+.upper>h4{
+  font-size: 1rem;
+  color: var(--clr-neutral-500);
+}
+
+.bottom>h5{
+  font-size: 2rem;
+}
+
+h6{
+  font-size: 0.875rem;
+}
+
 .attribution { font-size: 14px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
 
+
+/* media quires */
 
 @media (max-width:500px){
   .heading1{
@@ -290,5 +316,18 @@ input:checked + .slider:before {
   transform: translateX(calc(var(--width) / 2));
 }
 
-/* Rounded sliders */
 
+/* top border */
+
+.Layout1>container>.card:nth-child(1){
+  border-top: 5px solid var(--clr-Facebook);
+}
+.Layout1>container>.card:nth-child(2){
+  border-top: 5px solid var(--clr-Twitter);
+}
+.Layout1>container>.card:nth-child(3){
+  border-top: 5px solid  var(--clr-Instagram);
+}
+.Layout1>container>.card:nth-child(4){
+  border-top: 5px solid var(--clr-YouTube);
+}

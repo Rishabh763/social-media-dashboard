@@ -56,9 +56,9 @@ function Layout1() {
       <container>
        {
         data.map( (d) =>{ 
-            return  <div className={`card ${ d.id === 1 ? 'instagram' : ''}`} key={d.id}>
+            return  <div className="card" key={d.id}>
               <div className="platform">
-                <p>{d.src}</p>
+                  {d.src}
                 <h4>{d.name}</h4>
               </div>
               <div className="followers">
