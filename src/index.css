@@ -44,6 +44,7 @@ body {
 
   background-color: var(--clr-neutral-100);
   color: var(--clr-neutral-900);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 /* A elements that don't have a class get default styles */
@@ -89,6 +90,7 @@ select {
     --clr-neutral-300 : hsl(227, 47%, 96%);
     --clr-neutral-500 : hsl(228, 12%, 44%);
     --clr-neutral-900 : hsl(230, 17%, 14%);
+    --clr-LimeGreen: hsl(163, 72%, 41%);
   }
   :root[data-theme ="dark"]  {
     --clr-btn : linear-gradient( to right , hsl(210, 78%, 56%) 0% , hsl(146, 68%, 55%) 100%);
@@ -97,6 +99,7 @@ select {
     --clr-neutral-300 : hsl(228, 28%, 20%);
     --clr-neutral-500 : hsl(228, 34%, 66%);
     --clr-neutral-900 : hsl(0, 0%, 100%);
+    --clr-LimeGreen: hsl(163, 72%, 41%);
   }
 
 
@@ -210,8 +213,8 @@ container>.card:hover{
 }
 
 .upper,.bottom{
-  gap: 1rem;
-  
+  gap: 0.5rem;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -282,10 +285,10 @@ h6{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--clr-LimeGreen);
+  background-color: var(--clr-neutral-500);
   border-radius: 100vw;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
 }
 
 .slider:before {
@@ -316,6 +319,9 @@ input:checked + .slider:before {
   transform: translateX(calc(var(--width) / 2));
 }
 
+.slider:hover{
+  background: var(--clr-LimeGreen);
+}
 
 /* top border */
 
@@ -326,7 +332,8 @@ input:checked + .slider:before {
   border-top: 5px solid var(--clr-Twitter);
 }
 .Layout1>container>.card:nth-child(3){
-  border-top: 5px solid  var(--clr-Instagram);
+  border-top: 5px solid ;
+  border-image: var(--clr-Instagram) 1;
 }
 .Layout1>container>.card:nth-child(4){
   border-top: 5px solid var(--clr-YouTube);
