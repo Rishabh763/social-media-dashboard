@@ -3,6 +3,8 @@ import facebook from "../assets/images/icon-facebook.svg";
 import youtube from "../assets/images/icon-youtube.svg";
 import twitter from "../assets/images/icon-twitter.svg";
 import instagram from "../assets/images/icon-instagram.svg";
+import up from "../assets/images/icon-up.svg";
+import down from "../assets/images/icon-down.svg";
 
 function Layout2() {
   const data = [
@@ -12,6 +14,9 @@ function Layout2() {
       l: "Page Views",
       no: "87",
       today: "3%",
+      updown: true,
+      up: <img src={up} alt="increased" />,
+      down: <img src={down} alt="decreased" />,
     },
     {
       id: 2,
@@ -19,6 +24,9 @@ function Layout2() {
       l: "Likes",
       no: "52",
       today: " 2%",
+      updown: false,
+      up: <img src={up} alt="increased" />,
+      down: <img src={down} alt="decreased" />,
     },
     {
       id: 3,
@@ -26,13 +34,19 @@ function Layout2() {
       l: "Likes",
       no: "5462",
       today: "2257%",
+      updown: true,
+      up: <img src={up} alt="increased" />,
+      down: <img src={down} alt="decreased" />,
     },
     {
       id: 4,
       src: <img src={instagram} alt="Social" loading="lazy" />,
       l: "Profile Views",
-      no: "52k", 
+      no: "52k",
       today: "1375%",
+      updown: true,
+      up: <img src={up} alt="increased" />,
+      down: <img src={down} alt="decreased" />,
     },
     {
       id: 5,
@@ -40,6 +54,9 @@ function Layout2() {
       l: " Retweets",
       no: "117",
       today: "303%",
+      updown: true,
+      up: <img src={up} alt="increased" />,
+      down: <img src={down} alt="decreased" />,
     },
     {
       id: 6,
@@ -47,13 +64,19 @@ function Layout2() {
       l: "Likes",
       no: "507",
       today: "533%",
+      updown: true,
+      up: <img src={up} alt="increased" />,
+      down: <img src={down} alt="decreased" />,
     },
     {
       id: 7,
       src: <img src={youtube} alt="Social" loading="lazy" />,
       l: "Likes",
-      no: "107", 
+      no: "107",
       today: "19%",
+      updown: false,
+      up: <img src={up} alt="increased" />,
+      down: <img src={down} alt="decreased" />,
     },
     {
       id: 8,
@@ -61,6 +84,9 @@ function Layout2() {
       l: "Total Views",
       no: "1407",
       today: "12%",
+      updown: false,
+      up: <img src={up} alt="increased" />,
+      down: <img src={down} alt="decreased" />,
     },
   ];
 
@@ -77,7 +103,18 @@ function Layout2() {
               </div>
               <div className="bottom">
                 <h5>{d.no}</h5>
-                <h6>{d.today}</h6>
+                <div>
+                  {d.updown ? d.up : d.down}
+                  <h6
+                    style={{
+                      color: d.updown
+                        ? "var(--clr-LimeGreen)"
+                        : "var(--clr-BrightRed)",
+                    }}
+                  >
+                    {d.today}
+                  </h6>
+                </div>
               </div>
             </div>
           );

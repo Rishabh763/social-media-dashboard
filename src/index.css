@@ -208,6 +208,13 @@ container>.card:hover{
   color: var(--clr-neutral-500);
 }
 
+.card>.today{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
 .Layout2>container>.card{
   border: none;
 }
@@ -231,6 +238,12 @@ container>.card:hover{
 
 .bottom>h5{
   font-size: 2rem;
+}
+
+.bottom>div{
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 h6{
